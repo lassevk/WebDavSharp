@@ -1,0 +1,209 @@
+﻿<#@ output extension=".Designer.cs" #>
+<#@ assembly name="System.Core " #>
+<#@ import namespace="System.Linq" #>
+<#
+var codes = new Code[]
+{
+    /************** 1xx Informational **************/
+    new Code(100, "Continue", "Continue",
+        "The client SHOULD continue with its request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.1.1"),
+    new Code(101, "SwitchingProtocols", "Switching Protocols",
+        "The server understands and is willing to comply with the client's request, via the Upgrade message header field, for a change in the application protocol being used on this connection.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.1.2"),
+    new Code(102, "Processing", "Processing",
+        "The 102 (Processing) status code is an interim response used to inform the client that the server has accepted the complete request, but has not yet completed it.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_102"),
+
+    /************** 2xx Successful *****************/
+    new Code(200, "OK", "OK",
+        "The request has succeeded.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1"),
+    new Code(201, "Created", "Created",
+        "The request has been fulfilled and resulted in a new resource being created.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.2"),
+    new Code(202, "Accepted", "Accepted",
+        "The request has been accepted for processing, but the processing has not been completed.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.3"),
+    new Code(203, "NonAuthoritativeInformation", "Non-Authoritative Information",
+        "The returned metainformation in the entity-header is not the definitive set as available from the origin server, but is gathered from a local or a third-party copy.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.4"),
+    new Code(204, "NoContent", "No Content",
+        "The server has fulfilled the request but does not need to return an entity-body, and might want to return updated metainformation.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.5"),
+    new Code(205, "ResetContent", "Reset Content",
+        "The server has fulfilled the request and the user agent SHOULD reset the document view which caused the request to be sent.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.6"),
+    new Code(206, "PartialContent", "Partial Content",
+        "The server has fulfilled the partial GET request for the resource.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.7"),
+    new Code(207, "MultiStatus", "Multi-Status",
+        "The 207 (Multi-Status) status code provides status for multiple independent operations.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_207"),
+
+    /************** 3xx Redirection ****************/
+    new Code(300, "MultipleChoices", "Multiple Choices",
+        "The requested resource corresponds to any one of a set of representations.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.1"),
+    new Code(301, "MovedPermanently", "Moved Permanently",
+        "The requested resource has been assigned a new permanent URI and any future references to this resource SHOULD use one of the returned URIs.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2"),
+    new Code(302, "Found", "Found",
+        "The requested resource resides temporarily under a different URI.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3"),
+    new Code(303, "SeeOther", "See Other",
+        "The response to the request can be found under a different URI and SHOULD be retrieved using a GET method on that resource.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.4"),
+    new Code(304, "NotModified", "Not Modified",
+        "If the client has performed a conditional GET request and access is allowed, but the document has not been modified, the server SHOULD respond with this status code.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.5"),
+    new Code(305, "UseProxy", "Use Proxy",
+        "The requested resource MUST be accessed through the proxy given by the Location field.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.6"),
+    new Code(307, "TemporaryRedirect", "Temporary Redirect",
+        "The requested resource resides temporarily under a different URI.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8"),
+
+    /************** 4xx Client Error ***************/
+    /************** 5xx Server Error ***************/
+};
+var sections = new Section[]
+{
+    new Section("Informational", 100, 199,
+        "Informational 1xx: This class of status code indicates a provisional response, consisting only of the Status-Line and optional headers, and is terminated by an empty line.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.1"),
+    new Section("Successful", 200, 299,
+        "Successful 2xx: This class of status code indicates that the client's request was successfully received, understood, and accepted.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2"),
+    new Section("Redirection", 300, 399,
+        "Redirection 3xx: This class of status code indicates that further action needs to be taken by the user agent in order to fulfill the request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3"),
+    new Section("ClientError", 400, 499,
+        "The 4xx class of status code is intended for cases in which the client seems to have erred.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4"),
+    new Section("ServerError", 500, 599,
+        "Response status codes beginning with the digit \"5\" indicate cases in which the server is aware that it has erred or is incapable of performing the request",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5"),
+};
+#>
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace WebDAVSharp
+{
+    public static partial class HttpStatusCodes
+    {
+        private static readonly Dictionary<int, string> _Descriptions = new Dictionary<int, string>
+        {
+<#
+    var firstSection = true;
+    foreach (var section in sections.OrderBy(s => s.LowerId))
+    {
+        if (!firstSection)
+        {
+#>
+
+<#
+        }
+#>
+            // <#= section.Description #>
+<#
+        foreach (var code in codes.Where(c => c.Id >= section.LowerId && c.Id <= section.UpperId).OrderBy(c => c.Id))
+        {
+#>
+            { <#= code.Id #>, "<#= code.Name #>" },
+<#
+        }
+        firstSection = false;
+    }
+#>
+        };
+<#
+var orderedSections =
+    from section in sections
+    orderby section.LowerId
+    select section;
+foreach (var section in orderedSections)
+{
+    var sectionCodes =
+        from code in codes
+        where code.Id >= section.LowerId && code.Id <= section.UpperId
+        orderby code.Id
+        select code;
+#>
+
+        /// <summary>
+        /// <#= section.Description #>
+        /// </summary>
+        /// <remarks>
+        /// For more information, see <see href="<#= section.Url #>"/>.
+        /// </remarks>
+        public static class <#= section.IdentifierName #>
+        {
+<#
+    var firstCode = true;
+    foreach (var code in sectionCodes)
+    {
+        if (!firstCode)
+        {
+#>
+
+<#
+        }
+#>
+            /// <summary>
+            /// #<#= code.Id #>: <#= code.Description #>
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="<#= code.Url #>"/>.
+            /// </remarks>
+            public const int <#= code.IdentifierName #> = <#= code.Id #>;
+<#
+        firstCode = false;
+    }
+#>
+        }
+<#
+}
+#>
+    }
+}
+<#+
+class Code
+{
+    public Code(int id, string identifierName, string name, string description, string url)
+    {
+        Id = id;
+        IdentifierName = identifierName;
+        Name = name;
+        Description = description;
+        Url = url;
+    }
+
+    public int Id { get; private set; }
+    public string IdentifierName { get; private set; }
+    public string Name { get; private set; }
+    public string Description { get; private set; }
+    public string Url { get; private set; }
+}
+
+class Section
+{
+    public Section(string identifierName, int lowerId, int upperId, string description, string url)
+    {
+        IdentifierName = identifierName;
+        LowerId = lowerId;
+        UpperId = upperId;
+        Description = description;
+        Url = url;
+    }
+
+    public string IdentifierName { get; private set; }
+    public string Description { get; private set; }
+    public int LowerId { get; private set; }
+    public int UpperId { get; private set; }
+    public string Url { get; private set; }
+}
+#>
