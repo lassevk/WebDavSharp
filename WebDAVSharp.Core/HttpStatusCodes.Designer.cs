@@ -37,6 +37,24 @@ namespace WebDAVSharp
             { 307, "Temporary Redirect" },
 
             // The 4xx class of status code is intended for cases in which the client seems to have erred.
+            { 400, "Bad Request" },
+            { 401, "Unauthorized" },
+            { 402, "Bad PaymentRequired" },
+            { 403, "Forbidden" },
+            { 404, "Not Found" },
+            { 405, "Method Not Allowed" },
+            { 406, "Not Acceptable" },
+            { 407, "Proxy Authentication Required" },
+            { 408, "Request Timeout" },
+            { 409, "Conflict" },
+            { 410, "Gone" },
+            { 411, "Length Required" },
+            { 412, "Precondition Failed" },
+            { 413, "Request Entity Too Large" },
+            { 414, "Request-URI Too Long" },
+            { 415, "Unsupported Media Type" },
+            { 416, "Requested Range Not Satisfiable" },
+            { 417, "Expectation Failed" },
 
             // Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has erred or is incapable of performing the request
         };
@@ -220,6 +238,149 @@ namespace WebDAVSharp
         /// </remarks>
         public static class ClientError
         {
+            /// <summary>
+            /// #400: The request could not be understood by the server due to malformed syntax.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1"/>.
+            /// </remarks>
+            public const int BadRequest = 400;
+
+            /// <summary>
+            /// #401: The request requires user authentication.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2"/>.
+            /// </remarks>
+            public const int Unauthorized = 401;
+
+            /// <summary>
+            /// #402: This code is reserved for future use
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.3"/>.
+            /// </remarks>
+            public const int PaymentRequired = 402;
+
+            /// <summary>
+            /// #403: The server understood the request, but is refusing to fulfill it.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4"/>.
+            /// </remarks>
+            public const int Forbidden = 403;
+
+            /// <summary>
+            /// #404: The server has not found anything matching the Request-URI.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5"/>.
+            /// </remarks>
+            public const int NotFound = 404;
+
+            /// <summary>
+            /// #405: The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6"/>.
+            /// </remarks>
+            public const int MethodNotAllowed = 405;
+
+            /// <summary>
+            /// #406: The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to the accept headers sent in the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7"/>.
+            /// </remarks>
+            public const int NotAcceptable = 406;
+
+            /// <summary>
+            /// #407: This code is similar to 401 (<see cref="Unauthorized"/>), but indicates that the client must first authenticate itself with the proxy.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.8"/>.
+            /// </remarks>
+            public const int ProxyAuthenticationRequired = 407;
+
+            /// <summary>
+            /// #408: The client did not produce a request within the time that the server was prepared to wait.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.9"/>.
+            /// </remarks>
+            public const int RequestTimeout = 408;
+
+            /// <summary>
+            /// #409: The request could not be completed due to a conflict with the current state of the resource.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10"/>.
+            /// </remarks>
+            public const int Conflict = 409;
+
+            /// <summary>
+            /// #410: The requested resource is no longer available at the server and no forwarding address is known.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.11"/>.
+            /// </remarks>
+            public const int Gone = 410;
+
+            /// <summary>
+            /// #411: The server refuses to accept the request without a defined Content- Length.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.12"/>.
+            /// </remarks>
+            public const int LengthRequired = 411;
+
+            /// <summary>
+            /// #412: The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.13"/>.
+            /// </remarks>
+            public const int PreconditionFailed = 412;
+
+            /// <summary>
+            /// #413: The server is refusing to process a request because the request entity is larger than the server is willing or able to process.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.14"/>.
+            /// </remarks>
+            public const int RequestEntityTooLarge = 413;
+
+            /// <summary>
+            /// #414: The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.15"/>.
+            /// </remarks>
+            public const int RequestURITooLong = 414;
+
+            /// <summary>
+            /// #415: The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.16"/>.
+            /// </remarks>
+            public const int UnsupportedMediaType = 415;
+
+            /// <summary>
+            /// #416: A server SHOULD return a response with this status code if a request included a Range request-header field, and none of the range-specifier values in this field overlap the current extent of the selected resource, and the request did not include an If-Range request-header field.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.17"/>.
+            /// </remarks>
+            public const int RequestedRangeNotSatisfiable = 416;
+
+            /// <summary>
+            /// #417: The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18"/>.
+            /// </remarks>
+            public const int ExpectationFailed = 417;
         }
 
         /// <summary>
