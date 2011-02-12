@@ -119,6 +119,15 @@ var codes = new Code[]
     new Code(417, "ExpectationFailed", "Expectation Failed",
         "The expectation given in an Expect request-header field could not be met by this server, or, if the server is a proxy, the server has unambiguous evidence that the request could not be met by the next-hop server.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18"),
+    new Code(422, "UnprocessableEntity", "Unprocessable Entity",
+        "The 422 (<see cref=\"UnprocessableEntity\"/>) status code means the server understands the content type of the request entity (hence a 415 (<see cref=\"UnsupportedMediaType\"/>) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (<see cref=\"BadRequest\"/>) status code is inappropriate) but was unable to process the contained instructions.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_422"),
+    new Code(423, "Locked", "Locked",
+        "The 423 (<see cref=\"Locked\"/>) status code means the source or destination resource of a method is locked.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_423"),
+    new Code(424, "FailedDependency", "Failed Dependency",
+        "The 424 (<see cref=\"FailedDependency\"/>) status code means that the method could not be performed on the resource because the requested action depended on another action and that action failed.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_424"),
 
     /************** 5xx Server Error ***************/
     new Code(500, "InternalServerError", "Internal Server Error",
@@ -139,6 +148,9 @@ var codes = new Code[]
     new Code(505, "HTTPVersionNotSupported", "HTTP Version Not Supported",
         "The server does not support, or refuses to support, the HTTP protocol version that was used in the request message.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"),
+    new Code(507, "InsufficientStorage", "Insufficient Storage",
+        "The 507 (<see cref=\"InsufficientStorage\"/>) status code means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.",
+        "http://www.webdav.org/specs/rfc2518.html#STATUS_507"),
 };
 var sections = new Section[]
 {

@@ -55,6 +55,9 @@ namespace WebDAVSharp
             { 415, "Unsupported Media Type" },
             { 416, "Requested Range Not Satisfiable" },
             { 417, "Expectation Failed" },
+            { 422, "Unprocessable Entity" },
+            { 423, "Locked" },
+            { 424, "Failed Dependency" },
 
             // Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has erred or is incapable of performing the request
             { 500, "Internal Server Error" },
@@ -63,6 +66,7 @@ namespace WebDAVSharp
             { 503, "Service Unavailable" },
             { 504, "Gateway Timeout" },
             { 505, "HTTP Version Not Supported" },
+            { 507, "Insufficient Storage" },
         };
 
         /// <summary>
@@ -387,6 +391,30 @@ namespace WebDAVSharp
             /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18"/>.
             /// </remarks>
             public const int ExpectationFailed = 417;
+
+            /// <summary>
+            /// #422: The 422 (<see cref="UnprocessableEntity"/>) status code means the server understands the content type of the request entity (hence a 415 (<see cref="UnsupportedMediaType"/>) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (<see cref="BadRequest"/>) status code is inappropriate) but was unable to process the contained instructions.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.webdav.org/specs/rfc2518.html#STATUS_422"/>.
+            /// </remarks>
+            public const int UnprocessableEntity = 422;
+
+            /// <summary>
+            /// #423: The 423 (<see cref="Locked"/>) status code means the source or destination resource of a method is locked.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.webdav.org/specs/rfc2518.html#STATUS_423"/>.
+            /// </remarks>
+            public const int Locked = 423;
+
+            /// <summary>
+            /// #424: The 424 (<see cref="FailedDependency"/>) status code means that the method could not be performed on the resource because the requested action depended on another action and that action failed.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.webdav.org/specs/rfc2518.html#STATUS_424"/>.
+            /// </remarks>
+            public const int FailedDependency = 424;
         }
 
         /// <summary>
@@ -444,6 +472,14 @@ namespace WebDAVSharp
             /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"/>.
             /// </remarks>
             public const int HTTPVersionNotSupported = 505;
+
+            /// <summary>
+            /// #507: The 507 (<see cref="InsufficientStorage"/>) status code means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.webdav.org/specs/rfc2518.html#STATUS_507"/>.
+            /// </remarks>
+            public const int InsufficientStorage = 507;
         }
     }
 }
