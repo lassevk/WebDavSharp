@@ -83,7 +83,6 @@ var codes = new Code[]
     new Code(405, "MethodNotAllowed", "Method Not Allowed",
         "The method specified in the Request-Line is not allowed for the resource identified by the Request-URI.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.6"),
-    
     new Code(406, "NotAcceptable", "Not Acceptable",
         "The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to the accept headers sent in the request.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7"),
@@ -122,6 +121,24 @@ var codes = new Code[]
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.18"),
 
     /************** 5xx Server Error ***************/
+    new Code(500, "InternalServerError", "Internal Server Error",
+        "The server encountered an unexpected condition which prevented it from fulfilling the request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1"),
+    new Code(501, "NotImplemented", "Not Implemented",
+        "The server does not support the functionality required to fulfill the request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2"),
+    new Code(502, "BadGateway", "Bad Gateway",
+        "The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.3"),
+    new Code(503, "ServiceUnavailable", "Service Unavailable",
+        "The server is currently unable to handle the request due to a temporary overloading or maintenance of the server.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4"),
+    new Code(504, "GatewayTimeout", "Gateway Timeout",
+        "The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.5"),
+    new Code(505, "HTTPVersionNotSupported", "HTTP Version Not Supported",
+        "The server does not support, or refuses to support, the HTTP protocol version that was used in the request message.",
+        "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"),
 };
 var sections = new Section[]
 {
