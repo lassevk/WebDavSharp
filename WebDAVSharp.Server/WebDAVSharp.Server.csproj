@@ -60,7 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Stores\IWebDAVStore.cs" />
+    <Compile Include="Adapters\IHttpListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebDAVServer.cs" />
+    <Compile Include="Adapters\HttpListenerAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebDAVSharp.Core\WebDAVSharp.Core.csproj">

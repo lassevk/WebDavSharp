@@ -60,14 +60,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="EventBasedLogger.cs" />
+    <Compile Include="DebugLogger.cs" />
     <Compile Include="HttpStatusCodes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HttpStatusCodes.tt</DependentUpon>
     </Compile>
     <Compile Include="HttpStatusCodes.cs" />
+    <Compile Include="IWebDAVLogger.cs" />
+    <Compile Include="LogEventArgs.cs" />
+    <Compile Include="LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringEx.cs" />
+    <Compile Include="TextLogger.cs" />
+    <Compile Include="VoidLogger.cs" />
+    <Compile Include="WebDAVDisposableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\WebDAVSharp.snk">

@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="10.0" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">$(FxCopDir)\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded, Good, Noise" NewOnly="False" />
+   <Report Status="Active, Good, Noise" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/WebDAVSharp.Core/bin/Debug/</Directory>
+  </AssemblyReferenceDirectories>
+  <Target Name="$(ProjectDir)/WebDAVSharp.Server/bin/Debug/WebDAVSharp.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/WebDAVSharp.Server/bin/Debug/WebDAVSharp.Server.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityTransparencyRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="10.0">
+  <Namespaces>
+   <Namespace Name="WebDAVSharp">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Adapters">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Adapters</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Stores">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Stores</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/WebDAVSharp.Server/bin/Debug/WebDAVSharp.Core.dll">
+    <Modules>
+     <Module Name="webdavsharp.core.dll">
+      <Messages>
+       <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+        <Issue Name="Assembly">
+         <Item>DAV</Item>
+         <Item>'WebDAVSharp.Core.dll'</Item>
+         <Item>Dav</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="WebDAVSharp">
+        <Types>
+         <Type Name="ConsoleLogger">
+          <Members>
+           <Member Name="#.ctor(System.Predicate`1&lt;System.Collections.Generic.KeyValuePair`2&lt;WebDAVSharp.LogLevel,System.String&gt;&gt;,System.Func`4&lt;System.DateTime,WebDAVSharp.LogLevel,System.String,System.String&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'ConsoleLogger.ConsoleLogger(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;)'</Item>
+               <Item>'Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DebugLogger">
+          <Members>
+           <Member Name="#.ctor(System.Predicate`1&lt;System.Collections.Generic.KeyValuePair`2&lt;WebDAVSharp.LogLevel,System.String&gt;&gt;,System.Func`4&lt;System.DateTime,WebDAVSharp.LogLevel,System.String,System.String&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'DebugLogger.DebugLogger(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;)'</Item>
+               <Item>'Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpStatusCodes">
+          <Members>
+           <Member Name="#GetStatusCodes()">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'HttpStatusCodes.GetStatusCodes()'</Item>
+               <Item>'IEnumerable&lt;KeyValuePair&lt;int, string&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2011-02-12 19:31:16Z">
+              <Issue Certainty="50">
+               <Item>'HttpStatusCodes.GetStatusCodes()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpStatusCodes+ClientError">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'HttpStatusCodes.ClientError'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#RequestedRangeNotSatisfiable">
+            <Messages>
+             <Message Id="Satisfiable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-12 19:31:16Z">
+              <Issue Name="Member">
+               <Item>Satisfiable</Item>
+               <Item>'HttpStatusCodes.ClientError.RequestedRangeNotSatisfiable'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RequestURITooLong">
+            <Messages>
+             <Message Id="URI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+              <Issue Name="Member">
+               <Item>URI</Item>
+               <Item>'HttpStatusCodes.ClientError.RequestURITooLong'</Item>
+               <Item>Uri</Item>
+              </Issue>
+             </Message>
+             <Message Id="long" TypeName="IdentifiersShouldNotContainTypeNames" Category="Microsoft.Naming" CheckId="CA1720" Created="2011-02-12 19:31:16Z">
+              <Issue Name="LanguageSpecificMember">
+               <Item>Long</Item>
+               <Item>'HttpStatusCodes.ClientError.RequestURITooLong'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UnprocessableEntity">
+            <Messages>
+             <Message Id="Unprocessable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-12 19:31:16Z">
+              <Issue Name="Member">
+               <Item>Unprocessable</Item>
+               <Item>'HttpStatusCodes.ClientError.UnprocessableEntity'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpStatusCodes+Informational">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'HttpStatusCodes.Informational'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="HttpStatusCodes+Redirection">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'HttpStatusCodes.Redirection'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="HttpStatusCodes+ServerError">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'HttpStatusCodes.ServerError'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#HTTPVersionNotSupported">
+            <Messages>
+             <Message Id="HTTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+              <Issue Name="Member">
+               <Item>HTTP</Item>
+               <Item>'HttpStatusCodes.ServerError.HTTPVersionNotSupported'</Item>
+               <Item>Http</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpStatusCodes+Successful">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'HttpStatusCodes.Successful'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#OK">
+            <Messages>
+             <Message Id="OK" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+              <Issue Name="MemberAbbreviation">
+               <Item>OK</Item>
+               <Item>'HttpStatusCodes.Successful.OK'</Item>
+               <Item>Ok</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="LogEventArgs">
+          <Messages>
+           <Message Id="Args" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-12 19:31:16Z">
+            <Issue Name="Type">
+             <Item>Args</Item>
+             <Item>'LogEventArgs'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#_Level">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'LogEventArgs._Level'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_Message">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'LogEventArgs._Message'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_Timestamp">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'LogEventArgs._Timestamp'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Level">
+            <Accessors>
+             <Accessor Name="#set_Level(WebDAVSharp.LogLevel)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-02-12 19:31:16Z">
+                <Issue>
+                 <Item>'LogEventArgs.Level.set(LogLevel)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#Message">
+            <Accessors>
+             <Accessor Name="#set_Message(System.String)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-02-12 19:31:16Z">
+                <Issue>
+                 <Item>'LogEventArgs.Message.set(string)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#Timestamp">
+            <Accessors>
+             <Accessor Name="#set_Timestamp(System.DateTime)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2011-02-12 19:31:16Z">
+                <Issue>
+                 <Item>'LogEventArgs.Timestamp.set(DateTime)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextLoggerBase">
+          <Members>
+           <Member Name="#.ctor(System.Predicate`1&lt;System.Collections.Generic.KeyValuePair`2&lt;WebDAVSharp.LogLevel,System.String&gt;&gt;,System.Func`4&lt;System.DateTime,WebDAVSharp.LogLevel,System.String,System.String&gt;)">
+            <Messages>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'TextLoggerBase.TextLoggerBase(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;)'</Item>
+               <Item>'Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-02-12 19:31:16Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object, object)'</Item>
+               <Item>'TextLoggerBase.TextLoggerBase(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVDisposableBase">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDisposableBase'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Dispose()">
+            <Messages>
+             <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2011-02-12 19:31:16Z">
+              <Issue Name="DisposeImplementation">
+               <Item>'WebDAVDisposableBase.Dispose()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/WebDAVSharp.Server/bin/Debug/WebDAVSharp.Server.dll">
+    <Modules>
+     <Module Name="webdavsharp.server.dll">
+      <Messages>
+       <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+        <Issue Name="Assembly">
+         <Item>DAV</Item>
+         <Item>'WebDAVSharp.Server.dll'</Item>
+         <Item>Dav</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="WebDAVSharp.Server">
+        <Types>
+         <Type Name="WebDAVServer">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVServer'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#_Listener">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'WebDAVServer._Listener'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_Logger">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'WebDAVServer._Logger'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_Store">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+              <Issue>
+               <Item>'WebDAVServer._Store'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Adapters">
+        <Types>
+         <Type Name="IHttpListener">
+          <Messages>
+           <Message TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'IHttpListener'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Stores">
+        <Types>
+         <Type Name="IWebDAVStore">
+          <Messages>
+           <Message TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040" Created="2011-02-12 19:31:16Z">
+            <Issue>
+             <Item>'IWebDAVStore'</Item>
+            </Issue>
+           </Message>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'IWebDAVStore'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040">
+    <Resolution Name="Default">Define a custom attribute to replace {0}.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
+    <Resolution Name="Default">Consider a design where {0} doesn't nest generic type {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+    <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+    <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+    <Resolution Name="MemberAbbreviation">Correct the casing of '{0}' in member name {1} by changing it to '{2}'. '{2}' is an abbreviation and therefore is not subject to acronym casing guidelines.</Resolution>
+    <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+    <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotContainTypeNames" Category="Microsoft.Naming" CheckId="CA1720">
+    <Resolution Name="LanguageSpecificMember">Consider replacing the language-specific data type identifier '{0}' in member name {1} with either a language-independent equivalent or a more generic term, such as 'value'.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+    <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
+   </Rule>
+   <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
+    <Resolution Name="Default">Do not nest type {0}. Alternatively, change its accessibility so that it is not externally visible.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>
