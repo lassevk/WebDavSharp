@@ -57,6 +57,12 @@ namespace WebDAVSharp
             { 417, "Expectation Failed" },
 
             // Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has erred or is incapable of performing the request
+            { 500, "Internal Server Error" },
+            { 501, "Not Implemented" },
+            { 502, "Bad Gateway" },
+            { 503, "Service Unavailable" },
+            { 504, "Gateway Timeout" },
+            { 505, "HTTP Version Not Supported" },
         };
 
         /// <summary>
@@ -391,6 +397,53 @@ namespace WebDAVSharp
         /// </remarks>
         public static class ServerError
         {
+            /// <summary>
+            /// #500: The server encountered an unexpected condition which prevented it from fulfilling the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1"/>.
+            /// </remarks>
+            public const int InternalServerError = 500;
+
+            /// <summary>
+            /// #501: The server does not support the functionality required to fulfill the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.2"/>.
+            /// </remarks>
+            public const int NotImplemented = 501;
+
+            /// <summary>
+            /// #502: The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.3"/>.
+            /// </remarks>
+            public const int BadGateway = 502;
+
+            /// <summary>
+            /// #503: The server is currently unable to handle the request due to a temporary overloading or maintenance of the server.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4"/>.
+            /// </remarks>
+            public const int ServiceUnavailable = 503;
+
+            /// <summary>
+            /// #504: The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.5"/>.
+            /// </remarks>
+            public const int GatewayTimeout = 504;
+
+            /// <summary>
+            /// #505: The server does not support, or refuses to support, the HTTP protocol version that was used in the request message.
+            /// </summary>
+            /// <remarks>
+            /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"/>.
+            /// </remarks>
+            public const int HTTPVersionNotSupported = 505;
         }
     }
 }
