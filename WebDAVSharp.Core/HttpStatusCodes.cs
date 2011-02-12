@@ -1,7 +1,7 @@
 using System;
-using System.Diagnostics;
-using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace WebDAVSharp
 {
@@ -41,7 +41,7 @@ namespace WebDAVSharp
             string description;
             if (_Descriptions.TryGetValue(statusCode, out description))
                 return description;
-            return String.Format("Unknown status code (#{0})", statusCode);
+            return String.Format(CultureInfo.InvariantCulture, "Unknown status code (#{0})", statusCode);
         }
     }
 }

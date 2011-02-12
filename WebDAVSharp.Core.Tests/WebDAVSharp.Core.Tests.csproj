@@ -64,7 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpStatusCodesTests.cs" />
+    <Compile Include="MockBasedTestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextBasedLoggerBaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebDAVSharp.Core\WebDAVSharp.Core.csproj">

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-
-namespace WebDAVSharp
+﻿namespace WebDAVSharp
 {
     /// <summary>
     /// This class implements IsNullOrWhiteSpace for .NET 3.5.
