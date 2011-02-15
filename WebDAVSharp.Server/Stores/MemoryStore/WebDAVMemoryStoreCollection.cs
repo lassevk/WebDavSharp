@@ -121,12 +121,15 @@ namespace WebDAVSharp.Server.Stores.MemoryStore
         /// </returns>
         public IWebDAVStoreItem CopyItemHere(IWebDAVStoreItem source, string destinationName)
         {
-            if (source is IWebDAVStoreDocument)
-                return CopyDocument(source as IWebDAVStoreDocument, destinationName);
-            else if (source is IWebDAVStoreCollection)
-                return CopyCollection(source as IWebDAVStoreCollection, destinationName);
-            else
-                throw new HttpInternalServerException();
+            var document = source as IWebDAVStoreDocument;
+            if (document != null)
+                return CopyDocument(document, destinationName);
+
+            var collection = source as IWebDAVStoreCollection;
+            if (collection != null)
+                return CopyCollection(collection, destinationName);
+
+            throw new HttpInternalServerException();
         }
 
         /// <summary>

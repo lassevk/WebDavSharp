@@ -13,7 +13,7 @@ namespace WebDAVSharp.Server.MethodHandlers
         /// <summary>
         /// Gets the collection of the names of the HTTP methods handled by this instance.
         /// </summary>
-        public string[] Names
+        public IEnumerable<string> Names
         {
             get
             {
@@ -42,7 +42,7 @@ namespace WebDAVSharp.Server.MethodHandlers
         /// </param>
         public void ProcessRequest(WebDAVServer server, IHttpListenerContext context, IWebDAVStore store, ILogger logger)
         {
-            var item = context.Request.Url.GetItem(server, store);
+            // var item = context.Request.Url.GetItem(server, store);
             var verbsAllowed = new List<string> { "OPTIONS" };
 
             foreach (var verb in verbsAllowed)

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using WebDAVSharp.Server.Adapters;
 using WebDAVSharp.Server.Exceptions;
 using WebDAVSharp.Server.Stores;
@@ -13,7 +14,7 @@ namespace WebDAVSharp.Server.MethodHandlers
         /// <summary>
         /// Gets the collection of the names of the verbs handled by this instance.
         /// </summary>
-        public string[] Names
+        public IEnumerable<string> Names
         {
             get
             {

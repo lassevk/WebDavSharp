@@ -22,26 +22,29 @@ namespace WebDAVSharp
         /// A collection of <see cref="KeyValuePair{TKey,TValue}"/> objects.
         /// for all the known status codes and their short descriptions.
         /// </returns>
-        public static IEnumerable<KeyValuePair<int, string>> GetStatusCodes()
+        public static IEnumerable<StatusCode> StatusCodes
         {
-            return _Descriptions.ToArray();
+            get
+            {
+                return _StatusCodes.Values.ToArray();
+            }
         }
 
         /// <summary>
         /// Returns the short description belonging to a status code.
         /// </summary>
-        /// <param name="statusCode">
-        /// The status code to retrieve the short description for.
+        /// <param name="id">
+        /// The id of the status code to retrieve the short description for.
         /// </param>
         /// <returns>
         /// The short description for the status code.
         /// </returns>
-        public static string GetDescription(int statusCode)
+        public static string GetName(int id)
         {
-            string description;
-            if (_Descriptions.TryGetValue(statusCode, out description))
-                return description;
-            return String.Format(CultureInfo.InvariantCulture, "Unknown status code (#{0})", statusCode);
+            StatusCode statusCode;
+            if (_StatusCodes.TryGetValue(id, out statusCode))
+                return statusCode.Name;
+            return String.Format(CultureInfo.InvariantCulture, "Unknown status code (#{0})", id);
         }
     }
 }

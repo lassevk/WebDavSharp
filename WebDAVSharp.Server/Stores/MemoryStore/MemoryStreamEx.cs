@@ -7,7 +7,7 @@ namespace WebDAVSharp.Server.Stores.MemoryStore
     /// This is a descendant of <see cref="MemoryStream"/> that just adds an event for when
     /// the stream is closed.
     /// </summary>
-    public class MemoryStreamEx : MemoryStream
+    internal class MemoryStreamEx : MemoryStream
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MemoryStreamEx"/> class.

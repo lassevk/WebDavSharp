@@ -134,7 +134,8 @@ namespace WebDAVSharp.Server.Stores.DiskStore
         /// </param>
         public void Delete(IWebDAVStoreItem item)
         {
-            string itemPath = ((WebDAVDiskStoreItem)item).ItemPath;
+            var diskItem = (WebDAVDiskStoreItem)item;
+            string itemPath = diskItem.ItemPath;
             if (item is WebDAVDiskStoreDocument)
             {
                 if (!File.Exists(itemPath))
@@ -145,7 +146,7 @@ namespace WebDAVSharp.Server.Stores.DiskStore
             {
                 if (!Directory.Exists(itemPath))
                     throw new HttpNotFoundException();
-                Directory.Delete(((WebDAVDiskStoreItem)item).ItemPath);
+                Directory.Delete(diskItem.ItemPath);
             }
         }
 

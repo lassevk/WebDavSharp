@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Dictionary>
+    <Words>
+        <Recognized>
+            <Word>DAV</Word>
+            <Word>Args</Word>
+            <Word>Response</Word>
+            <Word>Unprocessable</Word>
+            <Word>Satisfiable</Word>
+        </Recognized>
+        <Compound>
+            <Term>ListenerResponse</Term>
+            <Term>ListenerRequest</Term>
+            <Term>ByName</Term>
+            <Term>EndPoint</Term>
+        </Compound>
+    </Words>
+    <Acronyms>
+        <CasingExceptions>
+            <Acronym>DAV</Acronym>
+            <Acronym>Mk</Acronym>
+            <Acronym>OK</Acronym>
+        </CasingExceptions>
+    </Acronyms>
+</Dictionary>

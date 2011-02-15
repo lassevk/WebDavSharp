@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using WebDAVSharp.Server.Adapters;
 using WebDAVSharp.Server.MethodHandlers;
 using WebDAVSharp.Server.Stores;
@@ -13,7 +14,7 @@ namespace WebDAVSharp.Server.Litmus
             _Handler = handler;
         }
 
-        public string[] Names
+        public IEnumerable<string> Names
         {
             get
             {

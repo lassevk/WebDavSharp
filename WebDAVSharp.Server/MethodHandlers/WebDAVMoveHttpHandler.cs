@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WebDAVSharp.Server.Adapters;
 using WebDAVSharp.Server.Exceptions;
@@ -14,7 +15,7 @@ namespace WebDAVSharp.Server.MethodHandlers
         /// <summary>
         /// Gets the collection of the names of the HTTP methods handled by this instance.
         /// </summary>
-        public string[] Names
+        public IEnumerable<string> Names
         {
             get
             {
@@ -44,12 +45,22 @@ namespace WebDAVSharp.Server.MethodHandlers
         public void ProcessRequest(WebDAVServer server, IHttpListenerContext context, IWebDAVStore store, ILogger logger)
         {
             var source = context.Request.Url.GetItem(server, store);
-            if (source is IWebDAVStoreDocument)
-                MoveDocument(server, context, store, source as IWebDAVStoreDocument);
-            else if (source is IWebDAVStoreCollection)
-                MoveCollection(server, context, store, source as IWebDAVStoreCollection);
-            else
-                throw new HttpMethodNotAllowedException();
+
+            var document = source as IWebDAVStoreDocument;
+            if (document != null)
+            {
+                MoveDocument(server, context, store, document);
+                return;
+            }
+
+            var collection = source as IWebDAVStoreCollection;
+            if (collection != null)
+            {
+                MoveCollection(server, context, store, collection);
+                return;
+            }
+
+            throw new HttpMethodNotAllowedException();
         }
 
         private void MoveDocument(WebDAVServer server, IHttpListenerContext context, IWebDAVStore store, IWebDAVStoreDocument source)

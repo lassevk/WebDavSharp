@@ -107,7 +107,7 @@ var codes = new Code[]
     new Code(413, "RequestEntityTooLarge", "Request Entity Too Large",
         "The server is refusing to process a request because the request entity is larger than the server is willing or able to process.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.14"),
-    new Code(414, "RequestURITooLong", "Request-URI Too Long",
+    new Code(414, "RequestUriTooLong", "Request-URI Too Long",
         "The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.15"),
     new Code(415, "UnsupportedMediaType", "Unsupported Media Type",
@@ -145,7 +145,7 @@ var codes = new Code[]
     new Code(504, "GatewayTimeout", "Gateway Timeout",
         "The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.5"),
-    new Code(505, "HTTPVersionNotSupported", "HTTP Version Not Supported",
+    new Code(505, "HttpVersionNotSupported", "HTTP Version Not Supported",
         "The server does not support, or refuses to support, the HTTP protocol version that was used in the request message.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"),
     new Code(507, "InsufficientStorage", "Insufficient Storage",
@@ -182,7 +182,7 @@ namespace WebDAVSharp
     /// </summary>
     public static partial class HttpStatusCodes
     {
-        private static readonly Dictionary<int, string> _Descriptions = new Dictionary<int, string>
+        private static readonly Dictionary<int, StatusCode> _StatusCodes = new Dictionary<int, StatusCode>
         {
 <#
     var firstSection = true;
@@ -200,7 +200,7 @@ namespace WebDAVSharp
         foreach (var code in codes.Where(c => c.Id >= section.LowerId && c.Id <= section.UpperId).OrderBy(c => c.Id))
         {
 #>
-            { <#= code.Id #>, "<#= code.Name #>" },
+            { <#= code.Id #>, new StatusCode(<#= code.Id #>, "<#= code.Name #>") },
 <#
         }
         firstSection = false;
