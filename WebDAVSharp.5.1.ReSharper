@@ -121,6 +121,7 @@
       <Abbreviation Text="URL" />
       <Abbreviation Text="XHTML" />
       <Abbreviation Text="DAV" />
+      <Abbreviation Text="GET" />
     </Naming2>
   </CodeStyleSettings>
   <SharedSolutionTemplateManager>

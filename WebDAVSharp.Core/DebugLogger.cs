@@ -17,7 +17,7 @@ namespace WebDAVSharp
         /// <param name="formatter">The function to format the log messages with;
         /// or <c>null</c> if the default log formatter should be used.</param>
         public DebugLogger(Predicate<KeyValuePair<LogLevel, string>> filter, Func<DateTime, LogLevel, string, string> formatter)
-            : base(filter, formatter)
+            : base(filter ?? new Predicate<KeyValuePair<LogLevel, string>>(kvp => true), formatter)
         {
             // Do nothing here
         }

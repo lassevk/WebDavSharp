@@ -58,6 +58,11 @@
    </Namespace>
    <Namespace Name="WebDAVSharp.Server">
     <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-13 20:58:20Z">
+      <Issue>
+       <Item>WebDAVSharp.Server</Item>
+      </Issue>
+     </Message>
      <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
       <Issue Name="Namespace">
        <Item>DAV</Item>
@@ -78,12 +83,82 @@
      </Message>
     </Messages>
    </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Exceptions">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Exceptions</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.MethodHandlers">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.MethodHandlers</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
    <Namespace Name="WebDAVSharp.Server.Stores">
     <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-13 20:58:20Z">
+      <Issue>
+       <Item>WebDAVSharp.Server.Stores</Item>
+      </Issue>
+     </Message>
      <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
       <Issue Name="Namespace">
        <Item>DAV</Item>
        <Item>WebDAVSharp.Server.Stores</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Stores.BaseClasses">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-13 20:58:20Z">
+      <Issue>
+       <Item>WebDAVSharp.Server.Stores.BaseClasses</Item>
+      </Issue>
+     </Message>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Stores.BaseClasses</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Stores.DiskStore">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Created="2011-02-13 20:58:20Z">
+      <Issue>
+       <Item>WebDAVSharp.Server.Stores.DiskStore</Item>
+      </Issue>
+     </Message>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Stores.DiskStore</Item>
+       <Item>Dav</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="WebDAVSharp.Server.Stores.MemoryStore">
+    <Messages>
+     <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+      <Issue Name="Namespace">
+       <Item>DAV</Item>
+       <Item>WebDAVSharp.Server.Stores.MemoryStore</Item>
        <Item>Dav</Item>
       </Issue>
      </Message>
@@ -108,11 +183,16 @@
         <Types>
          <Type Name="ConsoleLogger">
           <Members>
-           <Member Name="#.ctor(System.Predicate`1&lt;System.Collections.Generic.KeyValuePair`2&lt;WebDAVSharp.LogLevel,System.String&gt;&gt;,System.Func`4&lt;System.DateTime,WebDAVSharp.LogLevel,System.String,System.String&gt;)">
+           <Member Name="#.ctor(System.Predicate`1&lt;System.Collections.Generic.KeyValuePair`2&lt;WebDAVSharp.LogLevel,System.String&gt;&gt;,System.Func`4&lt;System.DateTime,WebDAVSharp.LogLevel,System.String,System.String&gt;,System.IO.TextWriter)">
             <Messages>
-             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-12 19:31:16Z">
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
               <Issue>
-               <Item>'ConsoleLogger.ConsoleLogger(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;)'</Item>
+               <Item>'ConsoleLogger.ConsoleLogger(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;, TextWriter)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'ConsoleLogger.ConsoleLogger(Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;, Func&lt;DateTime, LogLevel, string, string&gt;, TextWriter)'</Item>
                <Item>'Predicate&lt;KeyValuePair&lt;LogLevel, string&gt;&gt;'</Item>
               </Issue>
              </Message>
@@ -153,48 +233,48 @@
            </Member>
           </Members>
          </Type>
-         <Type Name="HttpStatusCodes+ClientError">
+         <Type Name="HttpStatusCodes+ClientErrors">
           <Messages>
-           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-13 20:58:20Z">
             <Issue>
-             <Item>'HttpStatusCodes.ClientError'</Item>
+             <Item>'HttpStatusCodes.ClientErrors'</Item>
             </Issue>
            </Message>
           </Messages>
           <Members>
            <Member Name="#RequestedRangeNotSatisfiable">
             <Messages>
-             <Message Id="Satisfiable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-12 19:31:16Z">
+             <Message Id="Satisfiable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-13 20:58:20Z">
               <Issue Name="Member">
                <Item>Satisfiable</Item>
-               <Item>'HttpStatusCodes.ClientError.RequestedRangeNotSatisfiable'</Item>
+               <Item>'HttpStatusCodes.ClientErrors.RequestedRangeNotSatisfiable'</Item>
               </Issue>
              </Message>
             </Messages>
            </Member>
            <Member Name="#RequestURITooLong">
             <Messages>
-             <Message Id="URI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+             <Message Id="URI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
               <Issue Name="Member">
                <Item>URI</Item>
-               <Item>'HttpStatusCodes.ClientError.RequestURITooLong'</Item>
+               <Item>'HttpStatusCodes.ClientErrors.RequestURITooLong'</Item>
                <Item>Uri</Item>
               </Issue>
              </Message>
-             <Message Id="long" TypeName="IdentifiersShouldNotContainTypeNames" Category="Microsoft.Naming" CheckId="CA1720" Created="2011-02-12 19:31:16Z">
+             <Message Id="long" TypeName="IdentifiersShouldNotContainTypeNames" Category="Microsoft.Naming" CheckId="CA1720" Created="2011-02-13 20:58:20Z">
               <Issue Name="LanguageSpecificMember">
                <Item>Long</Item>
-               <Item>'HttpStatusCodes.ClientError.RequestURITooLong'</Item>
+               <Item>'HttpStatusCodes.ClientErrors.RequestURITooLong'</Item>
               </Issue>
              </Message>
             </Messages>
            </Member>
            <Member Name="#UnprocessableEntity">
             <Messages>
-             <Message Id="Unprocessable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-12 19:31:16Z">
+             <Message Id="Unprocessable" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2011-02-13 20:58:20Z">
               <Issue Name="Member">
                <Item>Unprocessable</Item>
-               <Item>'HttpStatusCodes.ClientError.UnprocessableEntity'</Item>
+               <Item>'HttpStatusCodes.ClientErrors.UnprocessableEntity'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -219,21 +299,21 @@
            </Message>
           </Messages>
          </Type>
-         <Type Name="HttpStatusCodes+ServerError">
+         <Type Name="HttpStatusCodes+ServerErrors">
           <Messages>
-           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-12 19:31:16Z">
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Created="2011-02-13 20:58:20Z">
             <Issue>
-             <Item>'HttpStatusCodes.ServerError'</Item>
+             <Item>'HttpStatusCodes.ServerErrors'</Item>
             </Issue>
            </Message>
           </Messages>
           <Members>
            <Member Name="#HTTPVersionNotSupported">
             <Messages>
-             <Message Id="HTTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
+             <Message Id="HTTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
               <Issue Name="Member">
                <Item>HTTP</Item>
-               <Item>'HttpStatusCodes.ServerError.HTTPVersionNotSupported'</Item>
+               <Item>'HttpStatusCodes.ServerErrors.HTTPVersionNotSupported'</Item>
                <Item>Http</Item>
               </Issue>
              </Message>
@@ -407,6 +487,39 @@
       <Namespaces>
        <Namespace Name="WebDAVSharp.Server">
         <Types>
+         <Type Name="WebDAVExtensions">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVExtensions'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#GetPrefixUri(System.Uri,WebDAVSharp.Server.WebDAVServer)">
+            <Messages>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'WebDAVExtensions.GetPrefixUri(this Uri, WebDAVServer)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SendSimpleResponse(WebDAVSharp.Server.Adapters.IHttpListenerContext,System.Int32)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'WebDAVExtensions.SendSimpleResponse(this IHttpListenerContext, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="WebDAVServer">
           <Messages>
            <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
@@ -418,29 +531,24 @@
            </Message>
           </Messages>
           <Members>
-           <Member Name="#_Listener">
+           <Member Name="#.ctor(WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.ILogger,WebDAVSharp.Server.Adapters.IHttpListener,System.Collections.Generic.IEnumerable`1&lt;WebDAVSharp.Server.MethodHandlers.IWebDAVMethodHandler&gt;)">
             <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
               <Issue>
-               <Item>'WebDAVServer._Listener'</Item>
+               <Item>'WebDAVServer.WebDAVServer(IWebDAVStore, ILogger, IHttpListener, IEnumerable&lt;IWebDAVMethodHandler&gt;)'</Item>
               </Issue>
              </Message>
             </Messages>
            </Member>
-           <Member Name="#_Logger">
+           <Member Name="#ProcessRequest(System.Object)">
             <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
-              <Issue>
-               <Item>'WebDAVServer._Logger'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#_Store">
-            <Messages>
-             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2011-02-12 19:31:16Z">
-              <Issue>
-               <Item>'WebDAVServer._Store'</Item>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2011-02-13 20:58:20Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'WebDAVServer.ProcessRequest(object)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -451,11 +559,417 @@
        </Namespace>
        <Namespace Name="WebDAVSharp.Server.Adapters">
         <Types>
+         <Type Name="HttpListenerResponseAdapter">
+          <Members>
+           <Member Name="#.ctor(System.Net.HttpListenerResponse)">
+            <Messages>
+             <Message Id="Response" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+              <Issue Name="MemberParameter">
+               <Item>'HttpListenerResponseAdapter.HttpListenerResponseAdapter(HttpListenerResponse)'</Item>
+               <Item>Response</Item>
+               <Item>'Response'</Item>
+               <Item>response</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
          <Type Name="IHttpListener">
+          <Members>
+           <Member Name="#Stop()">
+            <Messages>
+             <Message Id="Stop" TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716" Created="2011-02-13 20:58:20Z">
+              <Issue Name="Member">
+               <Item>'IHttpListener.Stop()'</Item>
+               <Item>Stop</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IHttpListenerRequest">
+          <Members>
+           <Member Name="#RemoteEndPoint">
+            <Messages>
+             <Message Id="EndPoint" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-02-13 20:58:20Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>EndPoint</Item>
+               <Item>'IHttpListenerRequest.RemoteEndPoint'</Item>
+               <Item>Endpoint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Exceptions">
+        <Types>
+         <Type Name="HttpConflictException">
           <Messages>
-           <Message TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040" Created="2011-02-12 19:31:16Z">
-            <Issue>
-             <Item>'IHttpListener'</Item>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpConflictException'</Item>
+             <Item>protected HttpConflictException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpConflictException'</Item>
+             <Item>public HttpConflictException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpConflictException'</Item>
+             <Item>public HttpConflictException(String)</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpConflictException.HttpConflictException(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpException'</Item>
+             <Item>protected HttpException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpException'</Item>
+             <Item>public HttpException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpException'</Item>
+             <Item>public HttpException(String)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpException'</Item>
+             <Item>public HttpException(String, Exception)</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Created="2011-02-13 20:58:20Z">
+            <Issue Certainty="95" Level="Error">
+             <Item>'HttpException'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.Int32,System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpException.HttpException(int, string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpInternalServerException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpInternalServerException'</Item>
+             <Item>protected HttpInternalServerException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpInternalServerException'</Item>
+             <Item>public HttpInternalServerException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpInternalServerException'</Item>
+             <Item>public HttpInternalServerException(String)</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpInternalServerException.HttpInternalServerException(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpMethodNotAllowedException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpMethodNotAllowedException'</Item>
+             <Item>protected HttpMethodNotAllowedException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpMethodNotAllowedException'</Item>
+             <Item>public HttpMethodNotAllowedException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpMethodNotAllowedException'</Item>
+             <Item>public HttpMethodNotAllowedException(String)</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpMethodNotAllowedException.HttpMethodNotAllowedException(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpNotFoundException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotFoundException'</Item>
+             <Item>protected HttpNotFoundException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotFoundException'</Item>
+             <Item>public HttpNotFoundException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotFoundException'</Item>
+             <Item>public HttpNotFoundException(String)</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpNotFoundException.HttpNotFoundException(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="HttpNotImplementedException">
+          <Messages>
+           <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Created="2011-02-13 20:58:20Z">
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotImplementedException'</Item>
+             <Item>protected HttpNotImplementedException(SerializationInfo, StreamingContext)</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotImplementedException'</Item>
+             <Item>public HttpNotImplementedException()</Item>
+            </Issue>
+            <Issue Name="MissingConstructor">
+             <Item>'HttpNotImplementedException'</Item>
+             <Item>public HttpNotImplementedException(String)</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#.ctor(System.String,System.Exception)">
+            <Messages>
+             <Message TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'HttpNotImplementedException.HttpNotImplementedException(string, Exception)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.MethodHandlers">
+        <Types>
+         <Type Name="IWebDAVMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'IWebDAVMethodHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Names">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'IWebDAVMethodHandler.Names'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVCopyMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVCopyMethodHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#CopyItem(WebDAVSharp.Server.WebDAVServer,WebDAVSharp.Server.Adapters.IHttpListenerContext,WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.Server.Stores.IWebDAVStoreItem)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-02-13 20:58:20Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'WebDAVCopyMethodHandler.CopyItem(WebDAVServer, IHttpListenerContext, IWebDAVStore, IWebDAVStoreItem)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVDeleteMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDeleteMethodHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVGetMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVGetMethodHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMethodHandlers">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMethodHandlers'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMkColMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMkColMethodHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+           <Message Id="Mk" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>Mk</Item>
+             <Item>'WebDAVMkColMethodHandler'</Item>
+             <Item>MK</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMoveHttpHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMoveHttpHandler'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#MoveCollection(WebDAVSharp.Server.WebDAVServer,WebDAVSharp.Server.Adapters.IHttpListenerContext,WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.Server.Stores.IWebDAVStoreCollection)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-02-13 20:58:20Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'WebDAVMoveHttpHandler.MoveCollection(WebDAVServer, IHttpListenerContext, IWebDAVStore, IWebDAVStoreCollection)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MoveDocument(WebDAVSharp.Server.WebDAVServer,WebDAVSharp.Server.Adapters.IHttpListenerContext,WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.Server.Stores.IWebDAVStoreDocument)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2011-02-13 20:58:20Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'WebDAVMoveHttpHandler.MoveDocument(WebDAVServer, IHttpListenerContext, IWebDAVStore, IWebDAVStoreDocument)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ProcessRequest(WebDAVSharp.Server.WebDAVServer,WebDAVSharp.Server.Adapters.IHttpListenerContext,WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.ILogger)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-13 20:58:20Z">
+              <Issue Name="Local">
+               <Item>'source'</Item>
+               <Item>'IWebDAVStoreCollection'</Item>
+               <Item>'WebDAVMoveHttpHandler.ProcessRequest(WebDAVServer, IHttpListenerContext, IWebDAVStore, ILogger)'</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Issue Name="Local">
+               <Item>'source'</Item>
+               <Item>'IWebDAVStoreDocument'</Item>
+               <Item>'WebDAVMoveHttpHandler.ProcessRequest(WebDAVServer, IHttpListenerContext, IWebDAVStore, ILogger)'</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVOPTIONSMethodHandler">
+          <Messages>
+           <Message Id="DAVOPTIONS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAVOPTIONS</Item>
+             <Item>'WebDAVOPTIONSMethodHandler'</Item>
+             <Item>Davoptions</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#ProcessRequest(WebDAVSharp.Server.WebDAVServer,WebDAVSharp.Server.Adapters.IHttpListenerContext,WebDAVSharp.Server.Stores.IWebDAVStore,WebDAVSharp.ILogger)">
+            <Messages>
+             <Message Id="item" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2011-02-13 20:58:20Z">
+              <Issue>
+               <Item>'WebDAVOPTIONSMethodHandler.ProcessRequest(WebDAVServer, IHttpListenerContext, IWebDAVStore, ILogger)'</Item>
+               <Item>'item'</Item>
+               <Item>'IWebDAVStoreItem'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVPutMethodHandler">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVPutMethodHandler'</Item>
+             <Item>Dav</Item>
             </Issue>
            </Message>
           </Messages>
@@ -466,15 +980,246 @@
         <Types>
          <Type Name="IWebDAVStore">
           <Messages>
-           <Message TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040" Created="2011-02-12 19:31:16Z">
-            <Issue>
-             <Item>'IWebDAVStore'</Item>
-            </Issue>
-           </Message>
            <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-12 19:31:16Z">
             <Issue Name="Type">
              <Item>DAV</Item>
              <Item>'IWebDAVStore'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="IWebDAVStoreCollection">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'IWebDAVStoreCollection'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Created="2011-02-13 20:58:20Z">
+            <Issue Name="TypeNoAlternate">
+             <Item>'IWebDAVStoreCollection'</Item>
+             <Item>Collection</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#GetItemByName(System.String)">
+            <Messages>
+             <Message Id="ByName" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2011-02-13 20:58:20Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>ByName</Item>
+               <Item>'IWebDAVStoreCollection.GetItemByName(string)'</Item>
+               <Item>Byname</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="IWebDAVStoreDocument">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'IWebDAVStoreDocument'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="IWebDAVStoreItem">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'IWebDAVStoreItem'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Stores.BaseClasses">
+        <Types>
+         <Type Name="WebDAVStoreBase">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVStoreBase'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVStoreItemBase">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVStoreItemBase'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Stores.DiskStore">
+        <Types>
+         <Type Name="WebDAVDiskStore">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDiskStore'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVDiskStoreCollection">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDiskStoreCollection'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Created="2011-02-13 20:58:20Z">
+            <Issue Name="TypeNoAlternate">
+             <Item>'WebDAVDiskStoreCollection'</Item>
+             <Item>Collection</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Delete(WebDAVSharp.Server.Stores.IWebDAVStoreItem)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-13 20:58:20Z">
+              <Issue Name="Parameter">
+               <Item>'item'</Item>
+               <Item>'WebDAVDiskStoreItem'</Item>
+               <Item>'WebDAVDiskStoreCollection.Delete(IWebDAVStoreItem)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVDiskStoreDocument">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDiskStoreDocument'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVDiskStoreItem">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVDiskStoreItem'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="WebDAVSharp.Server.Stores.MemoryStore">
+        <Types>
+         <Type Name="MemoryStreamEx">
+          <Messages>
+           <Message TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710" Created="2011-02-13 20:58:20Z">
+            <Issue>
+             <Item>'MemoryStreamEx'</Item>
+             <Item>Stream</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Created="2011-02-13 20:58:20Z">
+            <Issue Name="TypeNewerVersion">
+             <Item>Ex</Item>
+             <Item>'MemoryStreamEx'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMemoryStore">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMemoryStore'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMemoryStoreCollection">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMemoryStoreCollection'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Created="2011-02-13 20:58:20Z">
+            <Issue Name="TypeNoAlternate">
+             <Item>'WebDAVMemoryStoreCollection'</Item>
+             <Item>Collection</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#CopyItemHere(WebDAVSharp.Server.Stores.IWebDAVStoreItem,System.String)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2011-02-13 20:58:20Z">
+              <Issue Name="Parameter">
+               <Item>'source'</Item>
+               <Item>'IWebDAVStoreCollection'</Item>
+               <Item>'WebDAVMemoryStoreCollection.CopyItemHere(IWebDAVStoreItem, string)'</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'source'</Item>
+               <Item>'IWebDAVStoreDocument'</Item>
+               <Item>'WebDAVMemoryStoreCollection.CopyItemHere(IWebDAVStoreItem, string)'</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WebDAVMemoryStoreDocument">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMemoryStoreDocument'</Item>
+             <Item>Dav</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="WebDAVMemoryStoreItem">
+          <Messages>
+           <Message Id="DAV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2011-02-13 20:58:20Z">
+            <Issue Name="Type">
+             <Item>DAV</Item>
+             <Item>'WebDAVMemoryStoreItem'</Item>
              <Item>Dav</Item>
             </Issue>
            </Message>
@@ -488,14 +1233,24 @@
    </Target>
   </Targets>
   <Rules>
-   <Rule TypeName="AvoidEmptyInterfaces" Category="Microsoft.Design" CheckId="CA1040">
-    <Resolution Name="Default">Define a custom attribute to replace {0}.</Resolution>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Resolution Name="Default">Consider merging the types defined in '{0}' with another namespace.</Resolution>
    </Rule>
    <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
     <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
    </Rule>
    <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
     <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Resolution Name="MemberShouldBeDiscreteTerm">The compound word '{0}' in member name {1} exists as a discrete term. If your usage is intended to be single word, case it as '{2}' or strip the first token entirely if it represents any sort of Hungarian notation.</Resolution>
+   </Rule>
+   <Rule TypeName="DefaultParametersShouldNotBeUsed" Category="Microsoft.Design" CheckId="CA1026">
+    <Resolution Name="Default">Replace method {0} with an overload that supplies all default arguments.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Local">{0}, a variable, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+    <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
    </Rule>
    <Rule TypeName="DoNotNestGenericTypesInMemberSignatures" Category="Microsoft.Design" CheckId="CA1006">
     <Resolution Name="Default">Consider a design where {0} doesn't nest generic type {1}.</Resolution>
@@ -504,6 +1259,7 @@
     <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
     <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
     <Resolution Name="MemberAbbreviation">Correct the casing of '{0}' in member name {1} by changing it to '{2}'. '{2}' is an abbreviation and therefore is not subject to acronym casing guidelines.</Resolution>
+    <Resolution Name="MemberParameter">In member {0}, correct the casing of '{1}' in parameter name {2} by changing it to '{3}'.</Resolution>
     <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
     <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
    </Rule>
@@ -511,17 +1267,45 @@
     <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
     <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
    </Rule>
+   <Rule TypeName="IdentifiersShouldHaveCorrectSuffix" Category="Microsoft.Naming" CheckId="CA1710">
+    <Resolution Name="Default">Rename {0} to end in '{1}'.</Resolution>
+   </Rule>
    <Rule TypeName="IdentifiersShouldNotContainTypeNames" Category="Microsoft.Naming" CheckId="CA1720">
     <Resolution Name="LanguageSpecificMember">Consider replacing the language-specific data type identifier '{0}' in member name {1} with either a language-independent equivalent or a more generic term, such as 'value'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711">
+    <Resolution Name="TypeNewerVersion">Either replace the suffix '{0}' in type name {1} with the suggested numeric alternate '2' or provide a more meaningful suffix that distinguishes it from the type it replaces.</Resolution>
+    <Resolution Name="TypeNoAlternate">Rename type name {0} so that it does not end in '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotMatchKeywords" Category="Microsoft.Naming" CheckId="CA1716">
+    <Resolution Name="Member">Rename virtual/interface member {0} so that it no longer conflicts with the reserved language keyword '{1}'. Using a reserved keyword as the name of a virtual/interface member makes it harder for consumers in other languages to override/implement the member.</Resolution>
    </Rule>
    <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
     <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
    </Rule>
+   <Rule TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032">
+    <Resolution Name="MissingConstructor">Add the following constructor to {0}: {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+    <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
    <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
     <Resolution Name="Default">Do not nest type {0}. Alternatively, change its accessibility so that it is not externally visible.</Resolution>
    </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+    <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   </Rule>
    <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
     <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
    </Rule>
    <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
     <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>

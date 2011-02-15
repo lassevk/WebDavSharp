@@ -245,7 +245,7 @@ namespace WebDAVSharp
         /// <remarks>
         /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4"/>.
         /// </remarks>
-        public static class ClientError
+        public static class ClientErrors
         {
             /// <summary>
             /// #400: The request could not be understood by the server due to malformed syntax.
@@ -422,7 +422,7 @@ namespace WebDAVSharp
         /// <remarks>
         /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5"/>.
         /// </remarks>
-        public static class ServerError
+        public static class ServerErrors
         {
             /// <summary>
             /// #500: The server encountered an unexpected condition which prevented it from fulfilling the request.
