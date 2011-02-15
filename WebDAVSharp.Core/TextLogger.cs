@@ -8,8 +8,8 @@ namespace WebDAVSharp
     /// </summary>
     public abstract class TextLoggerBase : ILogger
     {
-        private readonly Predicate<KeyValuePair<LogLevel, string>> _Filter;
-        private readonly Func<DateTime, LogLevel, string, string> _Formatter;
+        private readonly Predicate<LogEventArgs> _Filter;
+        private readonly Func<LogEventArgs, string> _Formatter;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextLoggerBase"/> class.
@@ -22,10 +22,10 @@ namespace WebDAVSharp
         /// The function to format the log messages with;
         /// or <c>null</c> if the default log formatter should be used.
         /// </param>
-        protected TextLoggerBase(Predicate<KeyValuePair<LogLevel, string>> filter, Func<DateTime, LogLevel, string, string> formatter)
+        protected TextLoggerBase(Predicate<LogEventArgs> filter, Func<LogEventArgs, string> formatter)
         {
-            _Filter = filter ?? (kvp => kvp.Key != LogLevel.Debug);
-            _Formatter = formatter ?? ((dt, level, message) => string.Format("{0} - {1}: {2}", dt, level, message));
+            _Filter = filter ?? (entry => entry.Level != LogLevel.Debug);
+            _Formatter = formatter ?? (entry => entry.ToString());
         }
 
         /// <summary>
@@ -40,10 +40,11 @@ namespace WebDAVSharp
         /// </param>
         public void Log(LogLevel level, string message)
         {
-            if (!_Filter(new KeyValuePair<LogLevel, string>(level, message)))
+            var entry = new LogEventArgs(DateTime.Now, level, message);
+            if (!_Filter(entry))
                 return;
 
-            Log(_Formatter(DateTime.Now, level, message));
+            Log(_Formatter(entry));
         }
 
         /// <summary>

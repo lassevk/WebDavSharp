@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -214,7 +215,7 @@ namespace WebDAVSharp.Server
                     string method = context.Request.HttpMethod;
                     IWebDAVMethodHandler methodHandler;
                     if (!_MethodHandlers.TryGetValue(method, out methodHandler))
-                        throw new HttpMethodNotAllowedException(String.Format("%s ({0})", context.Request.HttpMethod));
+                        throw new HttpMethodNotAllowedException(string.Format(CultureInfo.InvariantCulture, "%s ({0})", context.Request.HttpMethod));
 
                     context.Response.AppendHeader("DAV", "1,2,1#extend"); 
                     methodHandler.ProcessRequest(this, context, Store, _Logger);
@@ -243,7 +244,7 @@ namespace WebDAVSharp.Server
             catch (HttpException ex)
             {
                 context.Response.StatusCode = ex.StatusCode;
-                context.Response.StatusDescription = HttpStatusCodes.GetDescription(ex.StatusCode);
+                context.Response.StatusDescription = HttpStatusCodes.GetName(ex.StatusCode);
                 if (ex.Message != context.Response.StatusDescription)
                 {
                     byte[] buffer = Encoding.UTF8.GetBytes(ex.Message);
@@ -255,7 +256,7 @@ namespace WebDAVSharp.Server
             }
             finally
             {
-                _Logger.Log(LogLevel.Informational, context.Response.StatusCode + " " + context.Response.StatusDescription + ": " +  context.Request.HttpMethod + " " + context.Request.RemoteEndPoint + ": " + context.Request.Url);
+                _Logger.Log(LogLevel.Informational, context.Response.StatusCode + " " + context.Response.StatusDescription + ": " + context.Request.HttpMethod + " " + context.Request.RemoteEndPoint + ": " + context.Request.Url);
             }
         }
     }

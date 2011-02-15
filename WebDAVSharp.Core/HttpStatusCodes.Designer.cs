@@ -9,63 +9,63 @@ namespace WebDAVSharp
     /// </summary>
     public static partial class HttpStatusCodes
     {
-        private static readonly Dictionary<int, string> _Descriptions = new Dictionary<int, string>
+        private static readonly Dictionary<int, StatusCode> _StatusCodes = new Dictionary<int, StatusCode>
         {
             // Informational 1xx: This class of status code indicates a provisional response, consisting only of the Status-Line and optional headers, and is terminated by an empty line.
-            { 100, "Continue" },
-            { 101, "Switching Protocols" },
-            { 102, "Processing" },
+            { 100, new StatusCode(100, "Continue") },
+            { 101, new StatusCode(101, "Switching Protocols") },
+            { 102, new StatusCode(102, "Processing") },
 
             // Successful 2xx: This class of status code indicates that the client's request was successfully received, understood, and accepted.
-            { 200, "OK" },
-            { 201, "Created" },
-            { 202, "Accepted" },
-            { 203, "Non-Authoritative Information" },
-            { 204, "No Content" },
-            { 205, "Reset Content" },
-            { 206, "Partial Content" },
-            { 207, "Multi-Status" },
+            { 200, new StatusCode(200, "OK") },
+            { 201, new StatusCode(201, "Created") },
+            { 202, new StatusCode(202, "Accepted") },
+            { 203, new StatusCode(203, "Non-Authoritative Information") },
+            { 204, new StatusCode(204, "No Content") },
+            { 205, new StatusCode(205, "Reset Content") },
+            { 206, new StatusCode(206, "Partial Content") },
+            { 207, new StatusCode(207, "Multi-Status") },
 
             // Redirection 3xx: This class of status code indicates that further action needs to be taken by the user agent in order to fulfill the request.
-            { 300, "Multiple Choices" },
-            { 301, "Moved Permanently" },
-            { 302, "Found" },
-            { 303, "See Other" },
-            { 304, "Not Modified" },
-            { 305, "Use Proxy" },
-            { 307, "Temporary Redirect" },
+            { 300, new StatusCode(300, "Multiple Choices") },
+            { 301, new StatusCode(301, "Moved Permanently") },
+            { 302, new StatusCode(302, "Found") },
+            { 303, new StatusCode(303, "See Other") },
+            { 304, new StatusCode(304, "Not Modified") },
+            { 305, new StatusCode(305, "Use Proxy") },
+            { 307, new StatusCode(307, "Temporary Redirect") },
 
             // The 4xx class of status code is intended for cases in which the client seems to have erred.
-            { 400, "Bad Request" },
-            { 401, "Unauthorized" },
-            { 402, "Bad PaymentRequired" },
-            { 403, "Forbidden" },
-            { 404, "Not Found" },
-            { 405, "Method Not Allowed" },
-            { 406, "Not Acceptable" },
-            { 407, "Proxy Authentication Required" },
-            { 408, "Request Timeout" },
-            { 409, "Conflict" },
-            { 410, "Gone" },
-            { 411, "Length Required" },
-            { 412, "Precondition Failed" },
-            { 413, "Request Entity Too Large" },
-            { 414, "Request-URI Too Long" },
-            { 415, "Unsupported Media Type" },
-            { 416, "Requested Range Not Satisfiable" },
-            { 417, "Expectation Failed" },
-            { 422, "Unprocessable Entity" },
-            { 423, "Locked" },
-            { 424, "Failed Dependency" },
+            { 400, new StatusCode(400, "Bad Request") },
+            { 401, new StatusCode(401, "Unauthorized") },
+            { 402, new StatusCode(402, "Bad PaymentRequired") },
+            { 403, new StatusCode(403, "Forbidden") },
+            { 404, new StatusCode(404, "Not Found") },
+            { 405, new StatusCode(405, "Method Not Allowed") },
+            { 406, new StatusCode(406, "Not Acceptable") },
+            { 407, new StatusCode(407, "Proxy Authentication Required") },
+            { 408, new StatusCode(408, "Request Timeout") },
+            { 409, new StatusCode(409, "Conflict") },
+            { 410, new StatusCode(410, "Gone") },
+            { 411, new StatusCode(411, "Length Required") },
+            { 412, new StatusCode(412, "Precondition Failed") },
+            { 413, new StatusCode(413, "Request Entity Too Large") },
+            { 414, new StatusCode(414, "Request-URI Too Long") },
+            { 415, new StatusCode(415, "Unsupported Media Type") },
+            { 416, new StatusCode(416, "Requested Range Not Satisfiable") },
+            { 417, new StatusCode(417, "Expectation Failed") },
+            { 422, new StatusCode(422, "Unprocessable Entity") },
+            { 423, new StatusCode(423, "Locked") },
+            { 424, new StatusCode(424, "Failed Dependency") },
 
             // Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has erred or is incapable of performing the request
-            { 500, "Internal Server Error" },
-            { 501, "Not Implemented" },
-            { 502, "Bad Gateway" },
-            { 503, "Service Unavailable" },
-            { 504, "Gateway Timeout" },
-            { 505, "HTTP Version Not Supported" },
-            { 507, "Insufficient Storage" },
+            { 500, new StatusCode(500, "Internal Server Error") },
+            { 501, new StatusCode(501, "Not Implemented") },
+            { 502, new StatusCode(502, "Bad Gateway") },
+            { 503, new StatusCode(503, "Service Unavailable") },
+            { 504, new StatusCode(504, "Gateway Timeout") },
+            { 505, new StatusCode(505, "HTTP Version Not Supported") },
+            { 507, new StatusCode(507, "Insufficient Storage") },
         };
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace WebDAVSharp
             /// <remarks>
             /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.15"/>.
             /// </remarks>
-            public const int RequestURITooLong = 414;
+            public const int RequestUriTooLong = 414;
 
             /// <summary>
             /// #415: The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method.
@@ -470,7 +470,7 @@ namespace WebDAVSharp
             /// <remarks>
             /// For more information, see <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6"/>.
             /// </remarks>
-            public const int HTTPVersionNotSupported = 505;
+            public const int HttpVersionNotSupported = 505;
 
             /// <summary>
             /// #507: The 507 (<see cref="InsufficientStorage"/>) status code means the method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.

@@ -13,9 +13,9 @@ namespace WebDAVSharp.Tests
         [TestCase(422)]
         public void GetStatusCodes_ContainsAFewStandardCodes(int id)
         {
-            IEnumerable<KeyValuePair<int, string>> codes = HttpStatusCodes.GetStatusCodes();
+            IEnumerable<StatusCode> codes = HttpStatusCodes.StatusCodes;
 
-            Assert.That(codes.Any(c => c.Key == id), Is.True);
+            Assert.That(codes.Any(c => c.Id == id), Is.True);
         }
 
         [TestCase(200, "OK")]
@@ -25,7 +25,7 @@ namespace WebDAVSharp.Tests
         [TestCase(799, "Unknown status code (#799)")]
         public void GetDescription_ForSampleCodes_ReturnsCorrectDescription(int id, string expected)
         {
-            string output = HttpStatusCodes.GetDescription(id);
+            string output = HttpStatusCodes.GetName(id);
 
             Assert.That(output, Is.EqualTo(expected));
         }
@@ -33,9 +33,9 @@ namespace WebDAVSharp.Tests
         [Test]
         public void GetStatusCodes_ReturnsUniqueIds()
         {
-            int[] ids =
-                (from kvp in HttpStatusCodes.GetStatusCodes()
-                 select kvp.Key).ToArray();
+            int[] ids = 
+                (from statusCode in HttpStatusCodes.StatusCodes
+                 select statusCode.Id).ToArray();
 
             IEnumerable<int> uniqueIds = ids.Distinct();
 
@@ -43,15 +43,15 @@ namespace WebDAVSharp.Tests
         }
 
         [Test]
-        public void GetStatusCodes_ReturnsUniqueDescriptions()
+        public void GetStatusCodes_ReturnsUniqueNames()
         {
-            string[] descriptions =
-                (from kvp in HttpStatusCodes.GetStatusCodes()
-                 select kvp.Value).ToArray();
+            string[] names =
+                (from statusCode in HttpStatusCodes.StatusCodes
+                 select statusCode.Name).ToArray();
 
-            IEnumerable<string> uniqueDescriptions = descriptions.Distinct();
+            IEnumerable<string> uniqueDescriptions = names.Distinct();
 
-            Assert.That(uniqueDescriptions.Count(), Is.EqualTo(descriptions.Count()));
+            Assert.That(uniqueDescriptions.Count(), Is.EqualTo(names.Count()));
         }
     }
 }

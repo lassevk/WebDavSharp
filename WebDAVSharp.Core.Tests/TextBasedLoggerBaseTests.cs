@@ -11,7 +11,7 @@ namespace WebDAVSharp.Tests
         {
             public readonly List<string> Logged = new List<string>();
 
-            public TestLogger(Predicate<KeyValuePair<LogLevel, string>> filter, Func<DateTime, LogLevel, string, string> formatter)
+            public TestLogger(Predicate<LogEventArgs> filter, Func<LogEventArgs, string> formatter)
                 : base(filter, formatter)
             {
             }

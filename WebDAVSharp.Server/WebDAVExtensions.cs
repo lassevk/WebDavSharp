@@ -59,7 +59,7 @@ namespace WebDAVSharp.Server
                 throw new ArgumentNullException("context");
 
             context.Response.StatusCode = statusCode;
-            context.Response.StatusDescription = HttpStatusCodes.GetDescription(statusCode);
+            context.Response.StatusDescription = HttpStatusCodes.GetName(statusCode);
             context.Response.Close();
         }
 
@@ -84,7 +84,7 @@ namespace WebDAVSharp.Server
             string url = uri.ToString();
             foreach (string prefix in server.Listener.Prefixes)
             {
-                if (url.StartsWith(uri.ToString()))
+                if (url.StartsWith(uri.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
                     return new Uri(prefix);
                 }

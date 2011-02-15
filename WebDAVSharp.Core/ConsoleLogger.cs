@@ -22,7 +22,7 @@ namespace WebDAVSharp
         /// The <see cref="Console"/> to log messages to this <see cref="ConsoleLogger"/> to;
         /// or <c>null</c> to use <see cref="Console.Out"/>.
         /// </param>
-        public ConsoleLogger(Predicate<KeyValuePair<LogLevel, string>> filter, Func<DateTime, LogLevel, string, string> formatter, TextWriter outputConsole = null)
+        public ConsoleLogger(Predicate<LogEventArgs> filter, Func<LogEventArgs, string> formatter, TextWriter outputConsole = null)
             : base(filter, formatter)
         {
             _Console = outputConsole ?? Console.Out;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WebDAVSharp.Server.Adapters;
 using WebDAVSharp.Server.Exceptions;
@@ -14,7 +15,7 @@ namespace WebDAVSharp.Server.MethodHandlers
         /// <summary>
         /// Gets the collection of the names of the HTTP methods handled by this instance.
         /// </summary>
-        public string[] Names
+        public IEnumerable<string> Names
         {
             get
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace WebDAVSharp
 {
@@ -38,8 +39,10 @@ namespace WebDAVSharp
         /// </value>
         public DateTime Timestamp
         {
-            get;
-            private set;
+            get
+            {
+                return _Timestamp;
+            }
         }
 
         /// <summary>
@@ -50,8 +53,10 @@ namespace WebDAVSharp
         /// </value>
         public LogLevel Level
         {
-            get;
-            private set;
+            get
+            {
+                return _Level;
+            }
         }
 
         /// <summary>
@@ -62,8 +67,21 @@ namespace WebDAVSharp
         /// </value>
         public string Message
         {
-            get;
-            private set;
+            get
+            {
+                return _Message;
+            }
+        }
+
+        /// <summary>
+        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String"/> that represents this instance.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format(CultureInfo.InvariantCulture, "{0} - {1}: {2}", Timestamp, Level, Message);
         }
     }
 }

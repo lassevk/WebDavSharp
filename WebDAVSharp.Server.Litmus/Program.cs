@@ -15,8 +15,8 @@ namespace WebDAVSharp.Server.Litmus
         {
             var logger = new MultiLogger(new ILogger[]
             {
-                new ConsoleLogger(kvp => kvp.Key < LogLevel.Error, null, Console.Out),
-                new ConsoleLogger(kvp => kvp.Key >= LogLevel.Error, null, Console.Error),
+                new ConsoleLogger(entry => entry.Level < LogLevel.Error, null, Console.Out),
+                new ConsoleLogger(entry => entry.Level >= LogLevel.Error, null, Console.Error),
                 new DebugLogger(null, null),
             });
 

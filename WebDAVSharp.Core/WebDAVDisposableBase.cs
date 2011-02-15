@@ -14,10 +14,9 @@ namespace WebDAVSharp
         /// </summary>
         public void Dispose()
         {
+            Dispose(true);
             GC.SuppressFinalize(this);
             _IsDisposed = true;
-
-            Dispose(true);
         }
 
         /// <summary>
