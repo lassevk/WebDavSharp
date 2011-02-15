@@ -6,5 +6,12 @@
     /// </summary>
     public interface IWebDAVStore
     {
+        /// <summary>
+        /// Gets the root collection of this <see cref="IWebDAVStore"/>.
+        /// </summary>
+        IWebDAVStoreCollection Root
+        {
+            get;
+        }
     }
 }

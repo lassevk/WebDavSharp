@@ -163,10 +163,10 @@ var sections = new Section[]
     new Section("Redirection", 300, 399,
         "Redirection 3xx: This class of status code indicates that further action needs to be taken by the user agent in order to fulfill the request.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3"),
-    new Section("ClientError", 400, 499,
+    new Section("ClientErrors", 400, 499,
         "The 4xx class of status code is intended for cases in which the client seems to have erred.",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4"),
-    new Section("ServerError", 500, 599,
+    new Section("ServerErrors", 500, 599,
         "Response status codes beginning with the digit \"5\" indicate cases in which the server is aware that it has erred or is incapable of performing the request",
         "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5"),
 };

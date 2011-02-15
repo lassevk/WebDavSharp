@@ -60,11 +60,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\HttpListenerContextAdapter.cs" />
+    <Compile Include="Adapters\HttpListenerRequestAdapter.cs" />
+    <Compile Include="Adapters\HttpListenerResponseAdapter.cs" />
+    <Compile Include="Adapters\IAdapter.cs" />
+    <Compile Include="Adapters\IHttpListenerContext.cs" />
+    <Compile Include="Adapters\IHttpListenerRequest.cs" />
+    <Compile Include="Adapters\IHttpListenerResponse.cs" />
+    <Compile Include="Exceptions\HttpConflictException.cs" />
+    <Compile Include="Exceptions\HttpException.cs" />
+    <Compile Include="Exceptions\HttpInternalServerException.cs" />
+    <Compile Include="Exceptions\HttpMethodNotAllowedException.cs" />
+    <Compile Include="Exceptions\HttpNotFoundException.cs" />
+    <Compile Include="Exceptions\HttpNotImplementedException.cs" />
+    <Compile Include="MethodHandlers\WebDAVCopyMethodHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVDeleteMethodHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVMkColMethodHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVMoveHttpHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVOptionsMethodHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVPutMethodHandler.cs" />
+    <Compile Include="Stores\BaseClasses\WebDAVStoreBase.cs" />
+    <Compile Include="Stores\BaseClasses\WebDAVStoreItemBase.cs" />
+    <Compile Include="Stores\DiskStore\WebDAVDiskStore.cs" />
+    <Compile Include="Stores\DiskStore\WebDAVDiskStoreCollection.cs" />
+    <Compile Include="Stores\DiskStore\WebDAVDiskStoreDocument.cs" />
+    <Compile Include="Stores\DiskStore\WebDAVDiskStoreItem.cs" />
     <Compile Include="Stores\IWebDAVStore.cs" />
     <Compile Include="Adapters\IHttpListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MethodHandlers\IWebDAVMethodHandler.cs" />
+    <Compile Include="MethodHandlers\WebDAVGetMethodHandler.cs" />
+    <Compile Include="Stores\IWebDAVStoreCollection.cs" />
+    <Compile Include="Stores\IWebDAVStoreDocument.cs" />
+    <Compile Include="Stores\IWebDAVStoreItem.cs" />
+    <Compile Include="Stores\MemoryStore\MemoryStreamEx.cs" />
+    <Compile Include="Stores\MemoryStore\WebDAVMemoryStore.cs" />
+    <Compile Include="Stores\MemoryStore\WebDAVMemoryStoreCollection.cs" />
+    <Compile Include="Stores\MemoryStore\WebDAVMemoryStoreDocument.cs" />
+    <Compile Include="Stores\MemoryStore\WebDAVMemoryStoreItem.cs" />
+    <Compile Include="WebDAVExtensions.cs" />
     <Compile Include="WebDAVServer.cs" />
     <Compile Include="Adapters\HttpListenerAdapter.cs" />
+    <Compile Include="MethodHandlers\WebDAVMethodHandlers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebDAVSharp.Core\WebDAVSharp.Core.csproj">
