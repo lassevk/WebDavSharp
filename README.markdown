@@ -2,7 +2,7 @@ This project contains code to host a WebDAV server inside your own
 software, and in the future, code to access a WebDAV server.
 
 In order to run the unit-tests in this project you need the latest
-version of [TypeMock Isolator][3]. Right now that is version 6.0.6.0.
+version of [TypeMock Isolator][3]. Right now that is version 6.0.7.0.
 
 If you don't have a license for [TypeMock Isolator][3], you can get
 an open source license [here][4] that you can use.
